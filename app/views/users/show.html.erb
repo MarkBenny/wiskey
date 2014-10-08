@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @user.image %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<h3>Post</h3>
+<% @user.posts.each do |post| %>
+  <h2><%= link_to post.title, post %> </h2>
+  <p><%= link_to post.text, post %></p>
+
+
+<% end %>
