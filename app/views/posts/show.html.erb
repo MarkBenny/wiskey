@@ -16,14 +16,18 @@
 </p>
 
 	<h2> Comments </h2>
-	<%@post.comments.each do |comment| %>
+	<%@post.comments.order(:created_at).each do |comment| %>
 	<p><%= comment.text %> </p>
-	<p><%= time_ago_in_words comment.created_at %> ago </p>
+	<p><%= time_ago_in_words comment.created_at %> ago </p><br>
+  <%= link_to 'Edit', edit_post_comment_path(@post, comment) if @current_user.try(:id) == comment.user_id %>
+<%= link_to('Delete', post_comment_path(@post, comment), :method => :delete, :data => {:confirm => 'Are you sure?'}) if @current_user.try(:id) == comment.user_id %>
 	<% end %>
 
 <%= form_for [@post, @post.comments.build] do |f| %>
 <p> <%= f.text_area :text, :size => '30*10' %> </p>
 <p> <%= f.submit "Post Comment" %></p>
+
+
 <% end %>
 
 

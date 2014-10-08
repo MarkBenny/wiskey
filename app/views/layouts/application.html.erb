@@ -7,15 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <nav>
-    <ul>
-      <%== intellinav %>
-    </ul>
-  </nav>
-</header>
+
 
 <div class="container">
+  <header>
+    <nav>
+      <ul><%== intellinav %></ul>
+    </nav>
+  </header>
+
   <%= yield %>
 </div>
 </body>

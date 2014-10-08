@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @post = Post.find params[:post_id]
     @post.comments << @comment
+    @current_user.comments << @comment
     redirect_to @post
   
   end
@@ -33,7 +34,7 @@ class CommentsController < ApplicationController
   def update
     
       if @comment.update(comment_params)
-        redirect_to @post, notice: 'Post was successfully updated.' 
+        redirect_to @comment.post, notice: 'Comment was successfully updated.' 
     
       else
          render :edit 
@@ -45,14 +46,14 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
    
-     redirect_to posts_url, notice: 'Post was successfully destroyed.'
+     redirect_to @comment.post, notice: 'Post was successfully destroyed.'
       
   end
 
   private
   
-    def set_post
-      @comment = Post.find(params[:id])
+    def set_comment
+      @comment = Comment.find(params[:id])
     end
 
   

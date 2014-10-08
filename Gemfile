@@ -31,6 +31,7 @@ gem 'bcrypt'
 gem 'spring',        group: :development
 
 group :development do
+	gem 'rails_12factor'
   gem 'pry-rails'
   gem 'pry-debugger'
   gem 'pry-stack_explorer'
