@@ -25,3 +25,15 @@ header nav ul li:hover {
 	display: inline;
 	background-color: white;
 }
+
+.field { 
+display: block;
+padding: 0.2em;
+font-size: 16px;
+
+}
+.field input[type = password] {
+display: block;
+}
+
+
