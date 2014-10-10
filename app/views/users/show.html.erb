@@ -6,10 +6,13 @@
   <%= @user.name %>
 </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @user.image %>
-</p>
+<div class="avatar">
+	<p>
+	  <strong>Image:</strong>
+	</p>
+	<%= image_tag @user.image %>
+	
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

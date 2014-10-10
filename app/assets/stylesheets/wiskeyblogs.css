@@ -32,8 +32,30 @@ padding: 0.2em;
 font-size: 16px;
 
 }
-.field input[type = password] {
+.field label, input[type=password] {
 display: block;
+padding: 0.2em;
 }
 
+.field label, input[type=text] {
+display :block;
+padding: 0.2em;
+
+}
+
+.avatar img {
+  width: 300px;
+}
+
+.actions {
+	display: block;
+	margin-top: 17px;
+	margin-left: 5px;
+	margin-bottom: 17px;
+}
+
+
+center h1 {
+		color: darkcyan;
+}
 

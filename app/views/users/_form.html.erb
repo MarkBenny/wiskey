@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_area :name %>
+    <%= f.label :name %>
+    <%= f.text_field :name, :autofocus => true %>
   </div>
 
   <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_area :image %>
+    <%= f.label :image %>
+    <%= f.url_field :image %>
   </div>
 
   <div class="field">
@@ -35,4 +35,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>
